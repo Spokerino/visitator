@@ -52,6 +52,4 @@ public interface LessonRepository {
 
 	List<Lesson> findStudentLessons(Long studentId);
 
-	List<Lesson> findMissedLessonsByStudent(Long studentId);
-
 }

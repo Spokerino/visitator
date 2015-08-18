@@ -399,21 +399,5 @@ public class JdbcLessonRepository implements LessonRepository{
 															 EducationSpecializationTypes.COLLEGE_FACULTY,
 															 EducationGroupTypes.COLLEGE_GROUP), studentId);
 	}
-	
-	@Override
-	public List<Lesson> findMissedLessonsByStudent(Long studentId) {
-		String sql = "select * from lsn l "
-				+ "join subject s on l.subject_id = s.subjectId "
-				+ "join teacher t on l.teacher_id = t.teacherId "
-				+ "join faculty f on t.teacherFaculty_id = f.facultyId "
-	    		+ "join college c on f.college_id = c.collegeId "
-				+ "join lsn_student l_st on l.lsnId = l_st.lesson_id "
-				+ "join student st on l_st.student_id = st.id "
-				+ "where st.id = ? "
-				+ "and l_st.student_id is null";
-		
-		return jdbc.query(sql, new LessonRowMapper(TeacherTypes.COLLEGE_TEACHER,
-													 EducationInstitutionTypes.COLLEGE,
-													 EducationSpecializationTypes.COLLEGE_FACULTY), studentId);
-	}
+
 }
