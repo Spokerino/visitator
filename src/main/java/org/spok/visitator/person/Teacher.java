@@ -6,7 +6,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
-import org.spok.visitator.education.Subject;
+import org.spok.visitator.lesson.Subject;
 
 public abstract class Teacher extends Person {
 

@@ -31,7 +31,7 @@ public class JdbcCollegeTeacherRepository implements TeacherRepository {
 				+ "left join subject s on t_s.subject_id = s.subjectId "
 				+ "join faculty f on t.teacherFaculty_id = f.facultyId "
 				+ "join college c on f.college_id = c.collegeId "
-				+ "where t.teacherCollege_id = ? "
+				+ "where c.collegeId = ? "
 				+ "order by t.teacherLastname";
 		
 		return jdbc.query(sql, new TeachersResultSetExtractor(TeacherTypes.COLLEGE_TEACHER,
@@ -66,7 +66,7 @@ public class JdbcCollegeTeacherRepository implements TeacherRepository {
 		return jdbc.queryForObject(sql, new TeacherRowMapper(TeacherTypes.COLLEGE_TEACHER,
 															 EducationInstitutionTypes.COLLEGE,
 															 EducationSpecializationTypes.COLLEGE_FACULTY),
-						  teacherId);
+															 teacherId);
 
 	}
 	

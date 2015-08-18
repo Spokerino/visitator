@@ -6,7 +6,7 @@ import java.util.Set;
 import javax.validation.Valid;
 
 import org.spok.visitator.data.SubjectRepository;
-import org.spok.visitator.education.Subject;
+import org.spok.visitator.lesson.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

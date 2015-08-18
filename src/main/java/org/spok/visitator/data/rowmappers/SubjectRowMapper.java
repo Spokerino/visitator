@@ -5,7 +5,8 @@ import java.sql.SQLException;
 
 
 
-import org.spok.visitator.education.Subject;
+
+import org.spok.visitator.lesson.Subject;
 import org.springframework.jdbc.core.RowMapper;
 
 public class SubjectRowMapper implements RowMapper<Subject>{

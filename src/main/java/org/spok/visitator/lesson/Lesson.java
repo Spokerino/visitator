@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.spok.visitator.education.Subject;
 import org.spok.visitator.institution.EducationGroup;
 import org.spok.visitator.person.Student;
 import org.spok.visitator.person.Teacher;

@@ -3,7 +3,7 @@ package org.spok.visitator.data;
 import java.util.List;
 import java.util.Set;
 
-import org.spok.visitator.education.Subject;
+import org.spok.visitator.lesson.Subject;
 
 public interface SubjectRepository {
 

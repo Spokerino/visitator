@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 import org.spok.visitator.data.SubjectRepository;
 import org.spok.visitator.data.rowmappers.SubjectRowMapper;
-import org.spok.visitator.education.Subject;
+import org.spok.visitator.lesson.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;

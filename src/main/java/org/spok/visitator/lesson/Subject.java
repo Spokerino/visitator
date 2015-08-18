@@ -1,4 +1,4 @@
-package org.spok.visitator.education;
+package org.spok.visitator.lesson;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

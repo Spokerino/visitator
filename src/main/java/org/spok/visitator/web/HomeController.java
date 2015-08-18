@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.spok.visitator.data.EducationGroupRepository;
 import org.spok.visitator.data.SubjectRepository;
-import org.spok.visitator.education.Subject;
 import org.spok.visitator.institution.EducationGroup;
+import org.spok.visitator.lesson.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
