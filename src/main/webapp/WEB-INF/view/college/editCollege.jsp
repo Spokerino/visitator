@@ -89,7 +89,7 @@
 	 <br>
 	 <h2 id="alert" style="text-align: center; color: red; padding-top: 5px"></h2>
 	 
-	 <footer >Copyright © by me 2015<br>
+	 <footer >Copyright Â© by Ivaniuk E.G. 2015<br>
 			 Original idea of design was taken from w3.schools.com
 	 </footer>
 
