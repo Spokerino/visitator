@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
 import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
 import org.spok.visitator.data.enum_types.TeacherTypes;
-import org.spok.visitator.educ_person.Teacher;
 import org.spok.visitator.factories.TeacherFactory;
+import org.spok.visitator.person.Teacher;
 import org.springframework.jdbc.core.RowMapper;
 
 public class TeacherRowMapper implements RowMapper<Teacher> {

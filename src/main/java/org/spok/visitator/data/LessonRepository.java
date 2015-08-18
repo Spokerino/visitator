@@ -3,11 +3,11 @@ package org.spok.visitator.data;
 import java.util.List;
 
 import org.spok.visitator.data.enum_types.CollegeFacultyGroup;
-import org.spok.visitator.educ_person.Student;
 import org.spok.visitator.institution.EducationGroup;
 import org.spok.visitator.institution.EducationSpecialization;
 import org.spok.visitator.lesson.Lesson;
 import org.spok.visitator.lesson.Mark;
+import org.spok.visitator.person.Student;
 
 public interface LessonRepository {
 

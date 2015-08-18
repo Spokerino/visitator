@@ -1,8 +1,8 @@
 package org.spok.visitator.factories;
 
 import org.spok.visitator.data.enum_types.TeacherTypes;
-import org.spok.visitator.educ_person.CollegeTeacher;
-import org.spok.visitator.educ_person.Teacher;
+import org.spok.visitator.person.CollegeTeacher;
+import org.spok.visitator.person.Teacher;
 
 public class TeacherFactory {
 	

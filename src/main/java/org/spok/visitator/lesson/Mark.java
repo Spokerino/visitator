@@ -1,6 +1,6 @@
 package org.spok.visitator.lesson;
 
-import org.spok.visitator.educ_person.Student;
+import org.spok.visitator.person.Student;
 
 public class Mark {
 

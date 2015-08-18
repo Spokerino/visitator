@@ -5,10 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.spok.visitator.educ_person.Student;
-import org.spok.visitator.educ_person.Teacher;
 import org.spok.visitator.education.Subject;
 import org.spok.visitator.institution.EducationGroup;
+import org.spok.visitator.person.Student;
+import org.spok.visitator.person.Teacher;
 
 public abstract class Lesson implements Comparable<Lesson>{
 

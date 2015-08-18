@@ -7,8 +7,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.spok.visitator.educ_person.Student;
 import org.spok.visitator.lesson.Lesson;
+import org.spok.visitator.person.Student;
 
 public abstract class EducationGroup {
 

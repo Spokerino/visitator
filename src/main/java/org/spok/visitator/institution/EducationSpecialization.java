@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.validation.constraints.Size;
 
-import org.spok.visitator.educ_person.Teacher;
 import org.spok.visitator.education.Subject;
+import org.spok.visitator.person.Teacher;
 
 
 public abstract class EducationSpecialization {

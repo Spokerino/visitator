@@ -1,4 +1,4 @@
-package org.spok.visitator.educ_person;
+package org.spok.visitator.person;
 
 import org.spok.visitator.institution.EducationGroup;
 

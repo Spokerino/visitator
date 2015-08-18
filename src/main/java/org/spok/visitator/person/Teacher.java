@@ -1,4 +1,4 @@
-package org.spok.visitator.educ_person;
+package org.spok.visitator.person;
 
 import java.util.ArrayList;
 import java.util.List;

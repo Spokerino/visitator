@@ -2,8 +2,8 @@ package org.spok.visitator.data;
 
 import java.util.List;
 
-import org.spok.visitator.educ_person.CollegeTeacher;
-import org.spok.visitator.educ_person.Teacher;
+import org.spok.visitator.person.CollegeTeacher;
+import org.spok.visitator.person.Teacher;
 
 public interface TeacherRepository {
 	

@@ -15,10 +15,10 @@ import org.spok.visitator.data.rowmappers.EducationGroupRowMapper;
 import org.spok.visitator.data.rowmappers.EducationSpecializationRowMapper;
 import org.spok.visitator.data.rowmappers.SubjectRowMapper;
 import org.spok.visitator.data.rowmappers.TeacherRowMapper;
-import org.spok.visitator.educ_person.Teacher;
 import org.spok.visitator.education.Subject;
 import org.spok.visitator.institution.EducationGroup;
 import org.spok.visitator.institution.EducationSpecialization;
+import org.spok.visitator.person.Teacher;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
