@@ -14,24 +14,6 @@
 		}
 	
 	</style>
-<!-- <script  -->
-<%-- 	type="text/javascript" src="${pageContext.servletContext.contextPath}/js/jquery-1.11.3.js"></script> --%>
-
-<!-- <script type="text/javascript"> -->
-<!-- 	$(document).ready(function() { -->
-<!-- 		$('#ajaxTest').click(function() { -->
-<!-- 			$.ajax({ -->
-<!-- 				type : 'POST', -->
-<%-- 				url : '${pageContext.request.contextPath}/colleges/${collegeId}/ajax',//helloajax.html', --%>
-<!-- 				success : function(data) { -->
-<!-- 					$('#result').html(data); -->
-<!-- 				} -->
-<!-- 			}) -->
-<!-- 		}) -->
-<!-- 	}) -->
-<!-- </script> -->
-
-
 
 </head>
 <body style="height: 84%">
@@ -84,11 +66,6 @@
 		<tr>
 
 			<td><a href="/visitator/colleges/${collegeId}/faculties/${faculty.id}">${faculty.name}</a></td>
-<!-- 			<td> -->
-<%-- 				<c:forEach items="${faculty.subjects}" var="subject"> --%>
-<%-- 					${subject.name}<br> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</td> -->
 			<td>
 				<c:forEach items="${faculty.teachers}" var="teacher">
 					<c:if test="${not empty teacher.firstName}">
@@ -125,16 +102,6 @@
 	
 	<br>
 	
-<!-- 	<form> -->
-
-		
-<!-- 		<select name=select> -->
-<%-- 			<c:forEach items="${college.specializations}" var="faculty"> --%>
-<%-- 				<option value="${faculty.id}">${faculty.name}</option> --%>
-<%-- 			</c:forEach> --%>
-<!-- 		</select> -->
-<!-- 		<input type="submit" value="ajax Test" id="ajaxTest"> -->
-<!-- 	</form> -->
 	<div class="push"></div>
 	
 	</div>

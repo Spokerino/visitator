@@ -51,7 +51,7 @@
 	</table>
 		    
 		    <br>
-		    <input type="submit" value="Add college" style="position: relative; left: 20px">
+		    <input type="submit" value="Add college" style="left: 20px">
 	    	
 	</sf:form>
 	 

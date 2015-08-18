@@ -73,7 +73,7 @@
 	 			<th>Group</th>
 	 			<th>Student</th>
 	 			
-				<c:if test="${lesson.type ne 'Lecture'}">	 		
+				<c:if test="${lesson.type ne 'Lecture' and lesson.type ne 'Consultation'}">	 		
 	 				<th>Mark</th>
 	 			</c:if>
 	 		</tr>
@@ -103,7 +103,7 @@
 		 					
 		 				</td>
 		 				
-		 				<c:if test="${lesson.type ne 'Lecture'}">
+		 				<c:if test="${lesson.type ne 'Lecture' and lesson.type ne 'Consultation'}">
 			 				<td>
 				 				<c:forEach items="${marks}" var="mark">
 				 					<c:if test="${mark.student.id == student.id}">
