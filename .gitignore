@@ -9,3 +9,4 @@
 *.prefs
 .settings/.jsdtscope
 target/visitator-1.0-SNAPSHOT/index.jsp
+src/main/webapp/WEB-INF/props/messages.properties
