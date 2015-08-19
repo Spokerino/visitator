@@ -3,8 +3,7 @@ This is my project made on Spring MVC with MySQL database and, of course, it is 
 
 Current functionality is: browsing/creation/modification/deletion of
 - colleges, faculties, groups
-- students, teachers
-- subjects, lessons
+- students, teachers- subjects, lessons
 
   - changes can be made only by authorised users with proper rights (Srping security)
   - change students presence/absence and change/give them marks in lessons
