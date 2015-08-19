@@ -4,6 +4,7 @@ This is my project made on Spring MVC with MySQL database and, of course, it is 
 
 Current functionality is:
 browsing/creation/modification/deletion of
+
 - colleges, faculties, groups
 - subjects, lessons
 - students, teachers
