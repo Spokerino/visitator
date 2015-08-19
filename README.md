@@ -8,7 +8,7 @@ browsing/creation/modification/deletion of
   - subjects, lessons
   - students, teachers
 
-changes can be made only by authorised users with proper rights (Srping security)
-change students presence/absence and change/give them marks in lessons
-search for particular students
-search for lessons at particular date
+ - changes can be made only by authorised users with proper rights (Srping security)
+ - change students presence/absence and change/give them marks in lessons
+ - search for particular students
+ - search for lessons at particular date
