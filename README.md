@@ -4,11 +4,11 @@ This is my project made on Spring MVC with MySQL database and, of course, it is 
 
 Current functionality is:
 browsing/creation/modification/deletion of
-  - colleges, faculties, groups
-  - subjects, lessons
-  - students, teachers
+- colleges, faculties, groups
+- subjects, lessons
+- students, teachers
 
- - changes can be made only by authorised users with proper rights (Srping security)
- - change students presence/absence and change/give them marks in lessons
- - search for particular students
- - search for lessons at particular date
+- changes can be made only by authorised users with proper rights (Srping security)
+- change students presence/absence and change/give them marks in lessons
+- search for particular students
+- search for lessons at particular date
