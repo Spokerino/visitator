@@ -6,7 +6,16 @@ Current functionality is: browsing/creation/modification/deletion of
 - students, teachers
 - subjects, lessons
 
-  - changes can be made only by authorised users with proper rights (Srping security)
+  - changes can be made only by authorised users with proper rights 
   - change students presence/absence and change/give them marks in lessons
   - search for particular students
   - search for lessons at particular date
+
+Technologies used:
+- Maven
+- HTML5
+- JSP/JSTL
+- Javascript/jQuery
+- Spring security
+- IDE Eclipse
+- Apache Tomcat server
