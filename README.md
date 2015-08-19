@@ -1,5 +1,4 @@
 # visitator
-
 This is my project made on Spring MVC with MySQL database and, of course, it is about students and teachers :)
 
 Current functionality is: browsing/creation/modification/deletion of
