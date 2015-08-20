@@ -1,5 +1,6 @@
 package org.spok.visitator.web;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -318,6 +319,7 @@ public class StudentController {
 			}
 		}
 
+		Collections.sort(lessons);
 		ModelAndView model = addStudentFromCollegeGet(collegeId); 
 		model.setViewName("group/groupStudent");
 		model.addObject("student", student);

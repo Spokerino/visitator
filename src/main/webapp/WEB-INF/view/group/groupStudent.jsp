@@ -54,7 +54,7 @@
     <br>
 	
 	<div style="float: left; padding-left: 10px">
-		<form method="post" action="/visitator/colleges/${collegeId}/faculties/${facultyId}/groups/${groupId}/lessons">
+		<form method="post" action="/visitator/colleges/${collegeId}/faculties/${facultyId}/groups/${groupId}/students/${student.id}">
 			Show lessons at particular date<br>
 			<input type="date" name="date">
 		 	<input type="submit" value="Find">				

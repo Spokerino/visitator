@@ -446,7 +446,7 @@ public class LessonController {
   		Collections.sort(lessons);  			
   		CollegeStudent student = (CollegeStudent) studentRepository.findStudentById(studentId);
   		
-  		model.addObject("lessonList", lessons);
+  		model.addObject("lessons", lessons);
   		model.addObject("student", student);
 
   		return model;  			
