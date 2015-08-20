@@ -110,13 +110,11 @@ public class CollegeFacultyController {
 			
 			faculty.setId(facultyId);
 			specializationRepository.updateFaculty(faculty);
-			return "redirect:/colleges/{collegeId}/faculties";
 		}
 		else
 		{
 			specializationRepository.deleteFaculty(facultyId);
-			return "redirect:/colleges/{collegeId}/faculties";
 		}
-		
+		return "redirect:/colleges/{collegeId}/faculties";
 	}
 }
