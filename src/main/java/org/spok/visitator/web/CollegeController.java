@@ -101,13 +101,11 @@ public class CollegeController {
 			
 			college.setId(collegeId);
 			institutionRepostory.updateCollege(college);
-			return "redirect:/colleges";
 		}
 		else
 		{
 			institutionRepostory.deleteCollege(collegeId);
-			return "redirect:/colleges";
 		}
-		
+		return "redirect:/colleges";
 	}
 }
