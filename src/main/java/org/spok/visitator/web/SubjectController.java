@@ -75,16 +75,12 @@ public class SubjectController {
 				return new ModelAndView("subject");
 			
 			subjectRepository.updateSubject(subjectId, subject.getName());
-			ModelAndView model = new ModelAndView("redirect:/subjects");
-			
-			return model;
 		}
 		else
 		{
 			subjectRepository.deleteSubject(subjectId);
-			return new ModelAndView("redirect:/subjects");
 		}
-			
+		return new ModelAndView("redirect:/subjects");			
 	}
 	
 	@RequestMapping(value="/colleges/{collegeId}/subjects", method=RequestMethod.GET)

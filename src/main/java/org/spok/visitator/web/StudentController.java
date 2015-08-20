@@ -293,14 +293,12 @@ public class StudentController {
 			student.setId(studentId);
 			studentRepository.updateStudent(student);
 			
-			return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups/{groupId}/students");
 		}
 		else
 		{
 			studentRepository.deleteStudent(studentId);
-			return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups/{groupId}/students");
 		}
-		
+		return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups/{groupId}/students");
 	}
 	
 	

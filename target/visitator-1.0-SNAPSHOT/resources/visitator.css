@@ -1,0 +1,261 @@
+@CHARSET "UTF-8";
+
+/* * { */
+/*     box-sizing: border-box; */
+/* } */
+
+header {
+    background-color:black;
+    width: 98%;
+	color:white;
+	padding:3px;
+	padding-bottom:10px;
+	text-align:center;
+}
+
+#collegeHeader {
+	text-decoration: none;
+	color: #E6E680;
+	font-size: 18;
+}
+
+#facultyHeader {
+	text-decoration: none;
+	color: white;
+	font-size: 18;
+}
+
+#groupHeader {
+	text-decoration: none;
+	color: #AECFA2;
+	font-size: 18;
+	padding-left: 8%;
+}
+
+#itemHeader {
+	color: #E6E680;
+	font-size: 20;
+	padding-left: 8%;
+}
+
+header#wellcome form{
+    float: right;
+    margin-right:10px;
+}
+
+body {
+	background-color: #eeeeee;
+	height: 96%;
+}
+
+td, th{
+	padding-left: 7px;
+}
+
+#lw97{
+	text-align: left;
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 97%;
+	margin-left: 10px;
+	
+}
+
+#lw97 th {
+	background-color: black;
+	color: #AECFA2;
+}
+
+#lw97 td{
+	border: 1px solid black;
+}
+
+#lw97 tr:nth-child(even) {
+    background-color: #fff;
+}
+
+#lw97 tr:nth-child(odd) {
+   background-color: #E6E680;
+}
+
+#vertHeaders {
+	text-align: left;
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 97%;
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+#vertHeaders th{
+	width: 12%;
+	border: 1px solid #E6E680;
+	background-color: black;
+	color: #AECFA2;
+}
+
+#vertHeaders td{
+	width: 85%;
+	border: 1px solid black;
+}
+
+#vertHeaders tr:nth-child(even) {
+    background-color: #fff;
+}
+
+#vertHeaders tr:nth-child(odd) {
+   background-color: #E6E680;
+}
+
+#contentTable {
+	float:left;
+	padding-left: 20px;
+	width: 70%;
+	}
+		
+div#reg {
+	color:#AECFA2;
+	position: absolute;
+	top: 73px;
+	left: 64%;
+	padding-left: 2px;
+}
+
+#empty {
+	color: red;
+	font-weight: bold;
+	font-size: 17;
+}
+span#reg{
+	color:#AECFA2;
+	position: absolute;
+	top: 30px;
+	left: 79%;
+
+}
+
+span#reg span {
+	color: white;
+	font-size: 17;
+	
+}
+
+#newItem {
+	text-align: left;
+	width: 80%;
+}
+
+#newItem th{
+	width: 13%;
+/* 	padding: 5px; */
+}
+
+#newItem td{
+	padding: 5px;
+}
+
+form#reg {
+	position: absolute;
+	top: 63px;
+	left: 89%;
+}
+
+span#visitator {
+	float: left;
+	padding-left: 15px;
+	padding-top: 10px;
+	font-size: 20;
+	
+}
+
+span#visitator a {
+	text-decoration: none;
+	color:white;
+}
+nav {
+	background-color:#eeeeee;
+	line-height: 30px;
+	float:left;
+	width:18%;
+	min-height: 90%;
+	padding:1%;
+	padding-left:0px;
+
+}
+ul#menu {
+	float:left;
+}
+ul#menu li{
+	list-style-type:none;
+	margin:2%;
+	padding:1%;
+	padding-left:0px;
+	margin-left:0px;
+}
+ul#menu li a {
+	display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+	border-radius: 7px 7px 7px 7px;
+	width: 75%;
+	font-size: 19;
+	font-weight: lighter;
+	font-variant: small-caps; 
+	color: #AECFA2;
+}
+
+ul#menu li a:hover {
+    background-color: #AECFA2;
+    color: black;
+}
+section {
+	float:left;
+    padding:1px;
+}
+footer {
+	position: fixed;
+	width: 93%;
+	top: 91%;
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:35px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer, .push {
+	height: 4em;
+}
+
+.footer{
+	width: 93%;
+/* 	top: 835px; */
+	
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:35px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.error {
+        color: red;
+        font-weight: bold;
+    }
+
+article, aside{
+	display: none;
+}

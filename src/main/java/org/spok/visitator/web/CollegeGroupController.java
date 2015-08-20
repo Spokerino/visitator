@@ -131,14 +131,12 @@ public class CollegeGroupController {
 				
 			group.setId(groupId);
 			gRepository.updateGroup(group);
-			return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups");
 		}
 		else
 		{
 			gRepository.deleteGroup(groupId);
-			return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups");
 		}
-		
+		return new ModelAndView("redirect:/colleges/{collegeId}/faculties/{facultyId}/groups");		
 	}
 	
 }
