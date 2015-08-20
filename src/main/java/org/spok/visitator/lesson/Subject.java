@@ -46,7 +46,7 @@ public class Subject implements Comparable<Subject> {
 	
 	@Override
 	public int hashCode() {
-		return name.hashCode();
+		return id.hashCode();
 	}
 
 	@Override
