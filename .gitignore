@@ -1,4 +1,4 @@
-*.settings
+.settings/
 *.prefs
 *.container
 *.component
