@@ -1,13 +1,8 @@
-.settings/.jsdtscope
-.settings/org.eclipse.wst.ws.service.policy.prefs
+*.settings
 *.prefs
-.settings/org.eclipse.wst.jsdt.ui.superType.name
 *.container
-.settings/org.eclipse.wst.common.project.facet.core.xml
 *.component
-.settings/org.eclipse.m2e.core.prefs
 *.prefs
-.settings/.jsdtscope
 target/visitator-1.0-SNAPSHOT/index.jsp
 src/main/webapp/WEB-INF/props/messages.properties
 .classpath
