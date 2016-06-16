@@ -1,12 +1,10 @@
 package org.spok.visitator.data.jdbc;
 
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 import org.spok.visitator.data.SubjectRepository;
 import org.spok.visitator.data.rowmappers.SubjectRowMapper;
-import org.spok.visitator.lesson.Subject;
+import org.spok.visitator.entities.lesson.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -108,19 +106,19 @@ public class JdbcSubjectRepository implements SubjectRepository {
 
 	@Override
 	public Subject getSubjectForId(Integer subjectId){
-		String sql = "SELECT * FROM SUBJECT WHERE subjectID = ?";
+		String sql = "SELECT * FROM subject WHERE subjectID = ?";
 		return jdbc.queryForObject(sql, new Object[]{subjectId}, new SubjectRowMapper());
 	}
 	
 	@Override
 	public Subject getSubjectForName(String subjectName){
-		String sql = "SELECT * FROM SUBJECT WHERE subjectNAME = ?";
+		String sql = "SELECT * FROM subject WHERE subjectNAME = ?";
 		return jdbc.queryForObject(sql, new Object[]{subjectName}, new SubjectRowMapper());
 	}
 	
 	@Override
 	public List<Subject> getTeacherSubjects(Long teacherId){
-		String sql = "SELECT * FROM SUBJECT S "
+		String sql = "SELECT * FROM subject s "
 				+ "join teacher_subject t_s on s.subjectId = t_s.subject_id "
 				+ "WHERE t_s.teacher_id = ?";
 		return jdbc.query(sql, new SubjectRowMapper(), teacherId);
@@ -141,6 +139,15 @@ public class JdbcSubjectRepository implements SubjectRepository {
 				+ "and subject_id = ?";
 		
 		jdbc.update(sql, teacherId,	subjectId);
+	}
+
+	@Override
+	public Map<Integer, String> getsubjectsMap(Integer collegeId){
+		Map<Integer, String> subjectsMap = new HashMap<>();
+		for(Subject s : getCollegeSubjects(collegeId))
+			subjectsMap.put(s.getId(), s.getName());
+
+		return subjectsMap;
 	}
 	
 }

@@ -1,9 +1,10 @@
 package org.spok.visitator.data;
 
 import java.util.List;
+import java.util.Map;
 
-import org.spok.visitator.person.CollegeTeacher;
-import org.spok.visitator.person.Teacher;
+import org.spok.visitator.entities.person.CollegeTeacher;
+import org.spok.visitator.entities.person.Teacher;
 
 public interface TeacherRepository {
 	
@@ -14,4 +15,5 @@ public interface TeacherRepository {
 	Teacher getLastTeacherId();
 	void deleteTeacher(Long teacherId);
 	void updateTeacher(CollegeTeacher teacher, Long newFacultyId);
+	Map getTeachersMap(Integer collegeId);
 }

@@ -7,17 +7,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.StudentTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.StudentTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.data.rowmappers.EducationGroupRowMapper;
 import org.spok.visitator.data.rowmappers.LessonRowMapper;
 import org.spok.visitator.data.rowmappers.StudentRowMapper;
-import org.spok.visitator.institution.EducationGroup;
-import org.spok.visitator.lesson.Lesson;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.institution.EducationGroup;
+import org.spok.visitator.entities.lesson.Lesson;
+import org.spok.visitator.entities.person.Student;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 

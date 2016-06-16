@@ -3,12 +3,12 @@ package org.spok.visitator.data.jdbc;
 import java.util.List;
 
 import org.spok.visitator.data.LessonRepository;
-import org.spok.visitator.data.enum_types.CollegeFacultyGroup;
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.StudentTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.CollegeFacultyGroup;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.StudentTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.data.rowmappers.EducationGroupRowMapper;
 import org.spok.visitator.data.rowmappers.LessonRowMapper;
 import org.spok.visitator.data.rowmappers.MarkRowMapper;
@@ -16,11 +16,11 @@ import org.spok.visitator.data.rowmappers.StudentRowMapper;
 import org.spok.visitator.data.rsextractors.EducationGroupsResultSetExtractor;
 import org.spok.visitator.data.rsextractors.EducationSpecializationsResultSetExtractor;
 import org.spok.visitator.data.rsextractors.LessonsResultSetExtractor;
-import org.spok.visitator.institution.EducationGroup;
-import org.spok.visitator.institution.EducationSpecialization;
-import org.spok.visitator.lesson.Lesson;
-import org.spok.visitator.lesson.Mark;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.institution.EducationGroup;
+import org.spok.visitator.entities.institution.EducationSpecialization;
+import org.spok.visitator.entities.lesson.Lesson;
+import org.spok.visitator.entities.lesson.Mark;
+import org.spok.visitator.entities.person.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -339,6 +339,7 @@ public class JdbcLessonRepository implements LessonRepository{
 		        lesson.getTeacher().getId(),
 		        lesson.getSubject().getId(),
 		        type);
+
 	}
 	
 	@Override

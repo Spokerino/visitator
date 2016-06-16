@@ -1,9 +1,10 @@
 package org.spok.visitator.data;
 
 import java.util.List;
+import java.util.Map;
 
-import org.spok.visitator.institution.CollegeGroup;
-import org.spok.visitator.institution.EducationGroup;
+import org.spok.visitator.entities.institution.CollegeGroup;
+import org.spok.visitator.entities.institution.EducationGroup;
 
 public interface EducationGroupRepository {
 
@@ -13,4 +14,5 @@ public interface EducationGroupRepository {
 	void createGroup(CollegeGroup group, Long facultyId);
 	void updateGroup(CollegeGroup group);
 	void deleteGroup(Long groupId);
+	Map<Long, String> getCollegeGroupsMap(Integer collegeId);
 }

@@ -3,11 +3,12 @@ package org.spok.visitator.data.rowmappers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.DataTypeException;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
 import org.spok.visitator.factories.EducationGroupFactory;
-import org.spok.visitator.institution.EducationGroup;
+import org.spok.visitator.entities.institution.EducationGroup;
 import org.springframework.jdbc.core.RowMapper;
 
 public class EducationGroupRowMapper implements RowMapper<EducationGroup>{
@@ -27,9 +28,14 @@ public class EducationGroupRowMapper implements RowMapper<EducationGroup>{
 
 	@Override
 	public EducationGroup mapRow(ResultSet rs, int rowNum) throws SQLException {
-		
-		EducationGroup group = EducationGroupFactory.createGroup(groupType);
-		
+
+		EducationGroup group = null;
+		try {
+			group = EducationGroupFactory.createGroup(groupType);
+		} catch (DataTypeException e) {
+			e.printStackTrace();
+		}
+
 		group.setId(rs.getLong("groupId"));
 		group.setName(rs.getString("groupName"));
 		group.setCourse(rs.getInt("course"));

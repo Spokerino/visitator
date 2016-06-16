@@ -1,15 +1,17 @@
 package org.spok.visitator.data.jdbc;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.spok.visitator.data.EducationGroupRepository;
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
 import org.spok.visitator.data.rowmappers.EducationGroupRowMapper;
 import org.spok.visitator.data.rsextractors.EducationGroupsResultSetExtractor;
-import org.spok.visitator.institution.CollegeGroup;
-import org.spok.visitator.institution.EducationGroup;
+import org.spok.visitator.entities.institution.CollegeGroup;
+import org.spok.visitator.entities.institution.EducationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -48,6 +50,22 @@ public class JdbcCollegeGroupRepository implements EducationGroupRepository {
 				+ "where groupId = ?";
 		
 		jdbc.update(sql, groupId);
+	}
+
+
+	public List<EducationGroup> findAllCollegeGroups(Integer collegeId) {
+		String sql = "select * from grp g "
+				+ "left join student st on g.groupId = st.group_id "
+				+ "join faculty f on g.faculty_id = f.facultyId "
+				+ "join college c on f.college_id = c.collegeId "
+				+ "where c.collegeId = ? "
+				+ "order by g.groupName";
+
+		return  jdbc.query(sql, new EducationGroupsResultSetExtractor(
+						EducationInstitutionTypes.COLLEGE,
+						EducationSpecializationTypes.COLLEGE_FACULTY,
+						EducationGroupTypes.COLLEGE_GROUP),
+						collegeId);
 	}
 	
 	@Override
@@ -93,5 +111,15 @@ public class JdbcCollegeGroupRepository implements EducationGroupRepository {
 				EducationSpecializationTypes.COLLEGE_FACULTY,
 				EducationGroupTypes.COLLEGE_GROUP), 
 				facultyId, groupName);
+	}
+
+	@Override
+	public Map<Long, String> getCollegeGroupsMap(Integer collegeId) {
+		Map<Long, String> collegeGroupsMap = new HashMap<>();
+
+		for(EducationGroup group : findAllCollegeGroups(collegeId))
+			collegeGroupsMap.put(group.getId(), group.getName());
+
+		return collegeGroupsMap;
 	}
 }

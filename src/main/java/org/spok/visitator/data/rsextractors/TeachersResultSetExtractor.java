@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.data.rowmappers.SubjectRowMapper;
 import org.spok.visitator.data.rowmappers.TeacherRowMapper;
-import org.spok.visitator.lesson.Subject;
-import org.spok.visitator.person.Teacher;
+import org.spok.visitator.entities.lesson.Subject;
+import org.spok.visitator.entities.person.Teacher;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 

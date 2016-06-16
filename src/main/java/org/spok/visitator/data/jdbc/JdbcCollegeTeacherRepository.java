@@ -1,15 +1,17 @@
 package org.spok.visitator.data.jdbc;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.spok.visitator.data.TeacherRepository;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.data.rowmappers.TeacherRowMapper;
 import org.spok.visitator.data.rsextractors.TeachersResultSetExtractor;
-import org.spok.visitator.person.CollegeTeacher;
-import org.spok.visitator.person.Teacher;
+import org.spok.visitator.entities.person.CollegeTeacher;
+import org.spok.visitator.entities.person.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -124,6 +126,16 @@ public class JdbcCollegeTeacherRepository implements TeacherRepository {
 				teacher.getEmail(),
 				newFacultyId,
 				teacher.getId());
+	}
+
+	@Override
+	public Map getTeachersMap(Integer collegeId) {
+		Map<Long, String> teachersMap = new HashMap<>();
+
+		for(Teacher t : getCollegeTeachers(collegeId))
+			teachersMap.put(t.getId(), t.getFullName());
+
+		return teachersMap;
 	}
 	
 }

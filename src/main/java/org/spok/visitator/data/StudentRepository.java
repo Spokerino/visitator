@@ -2,8 +2,8 @@ package org.spok.visitator.data;
 
 import java.util.List;
 
-import org.spok.visitator.lesson.Mark;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.lesson.Mark;
+import org.spok.visitator.entities.person.Student;
 
 public interface StudentRepository {
 

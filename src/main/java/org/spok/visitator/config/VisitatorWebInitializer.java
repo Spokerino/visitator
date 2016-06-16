@@ -1,6 +1,5 @@
 package org.spok.visitator.config;
 
-import org.spok.visitator.web.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class VisitatorWebInitializer extends

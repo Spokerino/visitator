@@ -1,8 +1,8 @@
 package org.spok.visitator.factories;
 
-import org.spok.visitator.data.enum_types.StudentTypes;
-import org.spok.visitator.person.CollegeStudent;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.enum_types.StudentTypes;
+import org.spok.visitator.entities.person.CollegeStudent;
+import org.spok.visitator.entities.person.Student;
 
 public class StudentFactory {
 

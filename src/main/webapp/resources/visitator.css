@@ -13,6 +13,13 @@ header {
 	text-align:center;
 }
 
+img {
+	width: 1020px;
+	height: 720px;
+	position: absolute;
+	padding-top:10px;
+}
+
 #collegeHeader {
 	text-decoration: none;
 	color: #E6E680;
@@ -23,6 +30,12 @@ header {
 	text-decoration: none;
 	color: white;
 	font-size: 18;
+}
+
+#facultiesTable {
+	float:left;
+	padding-left: 20px;
+	width: 75%;
 }
 
 #groupHeader {
@@ -50,6 +63,10 @@ body {
 
 td, th{
 	padding-left: 7px;
+}
+
+#absent td{
+	background-color: red;
 }
 
 #lw97{
@@ -195,7 +212,7 @@ ul#menu li{
 ul#menu li a {
 	display: inline-block;
     background-color: black;
-    color: white;
+    /*color: white;*/
     padding: 10px 20px;
     text-decoration: none;
 	border-radius: 7px 7px 7px 7px;
@@ -227,10 +244,18 @@ footer {
     padding-bottom: 25px;
 }
 
+.groupForm {
+	float:right;
+	padding-right: 30px;
+	padding-top: 5px;
+	padding-bottom: 0;
+	position: relative;
+}
+
 .wrapper {
 	min-height: 100%;
 	height: auto !important;
-	height: 100%;
+	/*height: 100%;*/
 	margin: 0 auto -4em;
 }
 
@@ -259,3 +284,34 @@ footer {
 article, aside{
 	display: none;
 }
+
+#login-box {
+	width: 350px;
+	padding: 30px;
+	margin: 150px auto;
+	background: #fff;
+	/* 	-webkit-border-radius: 2px; */
+	/* 	-moz-border-radius: 2px; */
+	border: 1px solid #000;
+	font-size: 14;
+}
+.loginError {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+

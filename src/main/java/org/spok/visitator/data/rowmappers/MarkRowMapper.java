@@ -3,12 +3,12 @@ package org.spok.visitator.data.rowmappers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.StudentTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
-import org.spok.visitator.lesson.Mark;
-import org.spok.visitator.lesson.Markable;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.StudentTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
+import org.spok.visitator.entities.lesson.Mark;
+import org.spok.visitator.entities.lesson.Markable;
 import org.springframework.jdbc.core.RowMapper;
 
 public class MarkRowMapper implements RowMapper<Mark>{

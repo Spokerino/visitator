@@ -2,12 +2,12 @@ package org.spok.visitator.data;
 
 import java.util.List;
 
-import org.spok.visitator.data.enum_types.CollegeFacultyGroup;
-import org.spok.visitator.institution.EducationGroup;
-import org.spok.visitator.institution.EducationSpecialization;
-import org.spok.visitator.lesson.Lesson;
-import org.spok.visitator.lesson.Mark;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.enum_types.CollegeFacultyGroup;
+import org.spok.visitator.entities.institution.EducationGroup;
+import org.spok.visitator.entities.institution.EducationSpecialization;
+import org.spok.visitator.entities.lesson.Lesson;
+import org.spok.visitator.entities.lesson.Mark;
+import org.spok.visitator.entities.person.Student;
 
 public interface LessonRepository {
 

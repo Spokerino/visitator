@@ -7,12 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
 import org.spok.visitator.data.rowmappers.EducationInstitutionRowMapper;
 import org.spok.visitator.data.rowmappers.EducationSpecializationRowMapper;
-import org.spok.visitator.institution.EducationInstitution;
-import org.spok.visitator.institution.EducationSpecialization;
+import org.spok.visitator.entities.institution.EducationInstitution;
+import org.spok.visitator.entities.institution.EducationSpecialization;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -22,8 +22,8 @@ public class EducationInstitutionsResultSetExtractor implements ResultSetExtract
 	private EducationSpecializationTypes specializationType;
 
 	public EducationInstitutionsResultSetExtractor(EducationInstitutionTypes type,
-												   EducationSpecializationTypes specializationType) { 
-		
+												   EducationSpecializationTypes specializationType) {
+
 		this.institutionType = type;
 		this.specializationType = specializationType;
 	}

@@ -1,40 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Visitator</title>
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/visitator.css"/>" >
-</head>
+<%@ include file="../head.jsp"%>
+
 <body>
 	<header>
-		<h1><span id="visitator"><a href="/visitator" ><span style="color:#AECFA2">V</span>isitator!</a></span>
-		<span>
+		<h1>
+			<span id="visitator"><a href="/visitator" ><span style="color:#AECFA2">V</span>isitator!</a></span>
+			<span>
 				<a id="collegeHeader" href="/visitator/colleges/${collegeId}">
 					College: ${collegeName}
 				</a>
-		</span><br>
-		<span>
+			</span><br>
+			<span>
 				<a id="facultyHeader" href="/visitator/colleges/${collegeId}/faculties/${facultyId}">
 					Faculty: ${facultyName}
 				</a>
-		</span><br>
-		<span id="itemHeader">Subjects</span></h1>
+			</span><br>
+			<span id="itemHeader">Subjects</span>
+		</h1>
 	</header>
-	
-	<c:if test="${pageContext.request.userPrincipal.name != null}">
-		<span id="reg">
-		    Currently logged as : <span>${pageContext.request.userPrincipal.name}</span> 
-	        <c:url value="/logout" var="logoutUrl" />
-	    </span>
-	    <form id="reg" action="${logoutUrl} ">
-				<input type="submit" name="submit" value="Logout" >
-		</form>
-	</c:if>
-	
-	<br>
-	
+
+	<%@ include file="../logout.jsp"%><br>
+
 	<form style="float:right; padding-right: 30px" action="subjects/new">
 		<input type="submit" value="Add/Remove subjects">
 	</form>
@@ -49,9 +34,6 @@
 		</tr>
 		</c:forEach>
 	</table>
-	
-	<footer >Copyright © by me 2015<br>
-			 Original idea of design was taken from w3.schools.com
-	 </footer>
+
+	<%@include file='../footer.jsp' %>
 </body>
-</html>

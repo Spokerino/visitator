@@ -1,9 +1,10 @@
 package org.spok.visitator.data;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
-import org.spok.visitator.lesson.Subject;
+import org.spok.visitator.entities.lesson.Subject;
 
 public interface SubjectRepository {
 
@@ -34,4 +35,6 @@ public interface SubjectRepository {
 	void addSubjectToTeacher(Long teacherId, Integer subjectId);
 
 	void deleteSubjectFromTeacher(Long teacherId, Integer subjectId);
+
+	Map<Integer, String> getsubjectsMap(Integer collegeId);
 }

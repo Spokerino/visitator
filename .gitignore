@@ -3,7 +3,7 @@
 *.container
 *.component
 *.prefs
-target/visitator-1.0-SNAPSHOT/index.jsp
+target/
 src/main/webapp/WEB-INF/props/messages.properties
 .classpath
 .project

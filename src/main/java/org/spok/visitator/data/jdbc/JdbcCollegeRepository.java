@@ -3,12 +3,12 @@ package org.spok.visitator.data.jdbc;
 import java.util.List;
 
 import org.spok.visitator.data.EducationInstitutionRepository;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
 import org.spok.visitator.data.rowmappers.EducationInstitutionRowMapper;
 import org.spok.visitator.data.rsextractors.EducationInstitutionsResultSetExtractor;
-import org.spok.visitator.institution.College;
-import org.spok.visitator.institution.EducationInstitution;
+import org.spok.visitator.entities.institution.College;
+import org.spok.visitator.entities.institution.EducationInstitution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
@@ -31,48 +31,48 @@ public class JdbcCollegeRepository implements EducationInstitutionRepository {
 				+ "left join teacher t on c.collegeId = t.teachercollege_id";
 		
 		return jdbc.query(sql, new EducationInstitutionsResultSetExtractor(
-				EducationInstitutionTypes.COLLEGE, 
+				EducationInstitutionTypes.COLLEGE,
 				EducationSpecializationTypes.COLLEGE_FACULTY));
 	}
 	
 	@Override
-	public College findCollegeById(Integer id) {
+	public EducationInstitution findInstitutionById(Integer id) {
 		String sql = "select * from college c "
 				+ "where c.collegeId = ?";
-		return (College) jdbc.queryForObject(sql, new EducationInstitutionRowMapper(EducationInstitutionTypes.COLLEGE), id);
+		return (EducationInstitution) jdbc.queryForObject(sql, new EducationInstitutionRowMapper(EducationInstitutionTypes.COLLEGE), id);
 	}
 	
 	@Override
-	public College findCollegeByName(String name) {
+	public EducationInstitution findInstitutionByName(String name) {
 		String sql = "select * from college c "
 				+ "where c.collegeName = ?";
 		return (College) jdbc.queryForObject(sql, new EducationInstitutionRowMapper(EducationInstitutionTypes.COLLEGE), name);
 	}
 	
 	@Override
-	public void createCollege(College college) {
+	public void createInstitution(EducationInstitution institution) {
 		String sql = "insert into college (collegeName, address) "
 				+ "values (?, ?)";
 		
-		jdbc.update(sql, college.getName(), college.getAddress());
+		jdbc.update(sql, institution.getName(), institution.getAddress());
 	}
 	
 	@Override
-	public void updateCollege(College college) {
+	public void updateInstitution(EducationInstitution institution) {
 		String sql = "update college "
 				+ "set collegeName = ?, "
 				+ "address = ? "
 				+ "where collegeId = ?";
 		
-		jdbc.update(sql, college.getName(), college.getAddress(), college.getId());
+		jdbc.update(sql, institution.getName(), institution.getAddress(), institution.getId());
 	}
 	
 	@Override
-	public void deleteCollege(Integer collegeId) {
+	public void deleteInstitution(Integer institutionId) {
 		String sql = "delete from college "
 				+ "where collegeId = ?";
 		
-		jdbc.update(sql, collegeId);
+		jdbc.update(sql, institutionId);
 	}
 	
 //	@Override

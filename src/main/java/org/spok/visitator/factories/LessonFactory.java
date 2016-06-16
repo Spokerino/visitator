@@ -1,10 +1,10 @@
 package org.spok.visitator.factories;
 
-import org.spok.visitator.lesson.Consultation;
-import org.spok.visitator.lesson.LabPracticum;
-import org.spok.visitator.lesson.Lecture;
-import org.spok.visitator.lesson.Lesson;
-import org.spok.visitator.lesson.Practicum;
+import org.spok.visitator.entities.lesson.Consultation;
+import org.spok.visitator.entities.lesson.LabPracticum;
+import org.spok.visitator.entities.lesson.Lecture;
+import org.spok.visitator.entities.lesson.Lesson;
+import org.spok.visitator.entities.lesson.Practicum;
 
 public class LessonFactory {
 	

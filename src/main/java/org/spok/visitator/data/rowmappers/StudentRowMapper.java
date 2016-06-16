@@ -3,12 +3,12 @@ package org.spok.visitator.data.rowmappers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.StudentTypes;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.StudentTypes;
 import org.spok.visitator.factories.StudentFactory;
-import org.spok.visitator.person.Student;
+import org.spok.visitator.entities.person.Student;
 import org.springframework.jdbc.core.RowMapper;
 
 public class StudentRowMapper implements RowMapper<Student>{

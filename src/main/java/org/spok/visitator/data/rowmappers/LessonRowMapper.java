@@ -3,11 +3,11 @@ package org.spok.visitator.data.rowmappers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.factories.LessonFactory;
-import org.spok.visitator.lesson.Lesson;
+import org.spok.visitator.entities.lesson.Lesson;
 import org.springframework.jdbc.core.RowMapper;
 
 public class LessonRowMapper implements RowMapper<Lesson>{

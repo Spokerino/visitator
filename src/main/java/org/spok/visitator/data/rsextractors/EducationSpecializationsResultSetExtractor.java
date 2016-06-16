@@ -7,18 +7,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.spok.visitator.data.enum_types.EducationGroupTypes;
-import org.spok.visitator.data.enum_types.EducationInstitutionTypes;
-import org.spok.visitator.data.enum_types.EducationSpecializationTypes;
-import org.spok.visitator.data.enum_types.TeacherTypes;
+import org.spok.visitator.entities.enum_types.EducationGroupTypes;
+import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
+import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
+import org.spok.visitator.entities.enum_types.TeacherTypes;
 import org.spok.visitator.data.rowmappers.EducationGroupRowMapper;
 import org.spok.visitator.data.rowmappers.EducationSpecializationRowMapper;
 import org.spok.visitator.data.rowmappers.SubjectRowMapper;
 import org.spok.visitator.data.rowmappers.TeacherRowMapper;
-import org.spok.visitator.institution.EducationGroup;
-import org.spok.visitator.institution.EducationSpecialization;
-import org.spok.visitator.lesson.Subject;
-import org.spok.visitator.person.Teacher;
+import org.spok.visitator.entities.institution.EducationGroup;
+import org.spok.visitator.entities.institution.EducationSpecialization;
+import org.spok.visitator.entities.lesson.Subject;
+import org.spok.visitator.entities.person.Teacher;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -92,8 +92,7 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 					same = true;
 				}
 				if (!same) subjectList.add(subject);
-				//
-				
+
 				List<EducationGroup> groupList = specialization.getGroups();
 				if(groupList == null) {
 					groupList = new ArrayList<EducationGroup>();
