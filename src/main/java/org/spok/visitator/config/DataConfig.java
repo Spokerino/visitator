@@ -19,7 +19,7 @@ public class DataConfig {
 //		ds.setUrl("jdbc:mysql://127.7.78.130:3306/visitator");
 		ds.setUrl("jdbc:mysql://localhost:3306/visitator");
 		ds.setUsername("root");
-		ds.setPassword("vangUar7");
+		ds.setPassword("*");
 		ds.setInitialSize(5);
 		ds.setMaxTotal(10);
 		return ds;
