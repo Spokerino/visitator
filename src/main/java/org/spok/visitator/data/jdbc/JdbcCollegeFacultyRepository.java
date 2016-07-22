@@ -65,7 +65,7 @@ public class JdbcCollegeFacultyRepository implements EducationSpecializationRepo
 				+ "left join subject s on f_s.subject_id = s.subjectId "
 				+ "join college c on f.college_id = c.collegeId "
 				+ "where f.college_id = ? "
-				+ "order by f.facultyName, g.groupName";
+				+ "order by f.facultyName, teacherFirstName, g.groupName";
 		
 		return jdbc.query(sql, new EducationSpecializationsResultSetExtractor(
 				EducationInstitutionTypes.COLLEGE,

@@ -99,7 +99,8 @@ public class JdbcSubjectRepository implements SubjectRepository {
 	public List<Subject> getFacultySubjects(Long facultyId){
 		String sql = "select * from subject s "
 				+ "join faculty_subject f_s on s.subjectId = f_s.subject_id "
-				+ "where f_s.faculty_id = ?";
+				+ "where f_s.faculty_id = ? "
+				+ "ORDER BY subjectName";
 		
 		return jdbc.query(sql, new SubjectRowMapper(), facultyId);
 	}
@@ -119,15 +120,17 @@ public class JdbcSubjectRepository implements SubjectRepository {
 	@Override
 	public List<Subject> getTeacherSubjects(Long teacherId){
 		String sql = "SELECT * FROM subject s "
-				+ "join teacher_subject t_s on s.subjectId = t_s.subject_id "
-				+ "WHERE t_s.teacher_id = ?";
+				+ "JOIN teacher_subject t_s on s.subjectId = t_s.subject_id "
+				+ "WHERE t_s.teacher_id = ? "
+				+ "ORDER BY subjectName";
+
 		return jdbc.query(sql, new SubjectRowMapper(), teacherId);
 	}
 	
 	@Override
 	public void addSubjectToTeacher(Long teacherId, Integer subjectId) {
-		String sql = "insert into teacher_subject "
-				+ "values (?, ?)";
+		String sql = "INSERT INTO teacher_subject "
+				+ "VALUES (?, ?)";
 		
 		jdbc.update(sql, teacherId,	subjectId);
 	}

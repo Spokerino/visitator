@@ -1,27 +1,7 @@
 package org.spok.visitator.controllers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-
-import org.spok.visitator.data.EducationGroupRepository;
-import org.spok.visitator.data.EducationSpecializationRepository;
-import org.spok.visitator.data.LessonRepository;
-import org.spok.visitator.data.StudentRepository;
-import org.spok.visitator.data.SubjectRepository;
-import org.spok.visitator.data.TeacherRepository;
 import org.spok.visitator.entities.enum_types.CollegeFacultyGroup;
-import org.spok.visitator.entities.lesson.*;
-import org.spok.visitator.factories.LessonFactory;
-import org.spok.visitator.entities.institution.CollegeGroup;
-import org.spok.visitator.entities.institution.EducationGroup;
-import org.spok.visitator.entities.institution.EducationSpecialization;
-import org.spok.visitator.entities.person.CollegeStudent;
-import org.spok.visitator.entities.person.Student;
-import org.spok.visitator.entities.person.Teacher;
+import org.spok.visitator.entities.lesson.LessonValidator;
 import org.spok.visitator.services.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -192,41 +172,23 @@ public class LessonController {
   	
   	@RequestMapping(value="/lessons/new", method=RequestMethod.POST)
 	public ModelAndView saveLessonFromCollege(@PathVariable Integer collegeId,
-//											  @RequestParam("faculty") Long facultyId,
-//											  @RequestParam("date") String lessonDate,
-//											  @RequestParam("start") String lessonStart,
-//											  @RequestParam("end") String lessonEnd,
-//											  @RequestParam(value = "subject", required = false) String subjectName,
-//											  @RequestParam("teacher") Long teacherId,
 											  @RequestParam("types") int type,
 											  @RequestParam("group") String[] groupNames,
 
 											  @Valid @ModelAttribute("lesson") LessonValidator lesson,
 											  BindingResult result){
 			
-//	return lessonService.saveLessonFromCollege(facultyId, collegeId, lessonDate,
-//				lessonStart, lessonEnd, subjectName, teacherId,
-//			type, groupNames, CollegeFacultyGroup.COLLEGE, result);
-
 		return lessonService.saveLessonFromCollege(collegeId, type, groupNames, lesson, CollegeFacultyGroup.COLLEGE, result);
 	}
   	
   	@RequestMapping(value="faculties/{facultyId}/lessons/new", method=RequestMethod.POST)
 	public ModelAndView saveLessonFromFaculty(@PathVariable Integer collegeId,
 							 @PathVariable Long facultyId,
-//							 @RequestParam("date") String lessonDate,
-//							 @RequestParam("start") String lessonStart,
-//							 @RequestParam("end") String lessonEnd,
-//							 @RequestParam("subjects") Integer subjectId,
-//							 @RequestParam("teachers") Long teacherId,
 							 @RequestParam("types") int type,
 							 @RequestParam("group") String[] groupIds,
 						     @Valid @ModelAttribute("lesson") LessonValidator lesson,
 							 BindingResult result){
 			
-//		return lessonService.saveLessonFromFaculty(lessonDate,
-//				lessonStart, lessonEnd, subjectId, teacherId,
-//				type, groupIds, CollegeFacultyGroup.FACULTY, result);
 		return lessonService.saveLessonFromFaculty(collegeId, facultyId, type, groupIds, lesson, CollegeFacultyGroup.FACULTY, result);
 	}
   					
@@ -234,11 +196,6 @@ public class LessonController {
 	public ModelAndView saveLessonFromGroup(@PathVariable Integer collegeId,
 											 @PathVariable Long facultyId,
 											 @PathVariable Long groupId,
-//											 @RequestParam("date") String lessonDate,
-//											 @RequestParam("start") String lessonStart,
-//											 @RequestParam("end") String lessonEnd,
-//											 @RequestParam("subjects") Integer subjectId,
-//											 @RequestParam("teachers") Long teacherId,
 											 @RequestParam("types") int type,
 											 @Valid @ModelAttribute("lesson") LessonValidator lesson,
 											 BindingResult result){

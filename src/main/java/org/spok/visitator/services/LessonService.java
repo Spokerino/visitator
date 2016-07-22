@@ -58,7 +58,6 @@ public class LessonService {
             l.setStudents(lessonRepository.findStudentsOnLesson(l.getId()));
         }
 
-        Collections.sort(lessons);
         model.addObject("lessonList", lessons);
 
         return model;
@@ -214,7 +213,6 @@ public class LessonService {
             l.setStudents(lessonRepository.findStudentsOnLesson(l.getId()));
         }
 
-        Collections.sort(lessons);
         model.addObject("lessonList", lessons);
 
         return model;
@@ -237,7 +235,6 @@ public class LessonService {
                 ((Markable) l).setMarks(lessonRepository.showLessonMarks(l.getId()));
             }
         }
-        Collections.sort(lessons);
         CollegeStudent student = (CollegeStudent) studentRepository.findStudentById(studentId);
 
         model.addObject("lessons", lessons);

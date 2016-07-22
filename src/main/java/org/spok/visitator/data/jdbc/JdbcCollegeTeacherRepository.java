@@ -34,7 +34,7 @@ public class JdbcCollegeTeacherRepository implements TeacherRepository {
 				+ "join faculty f on t.teacherFaculty_id = f.facultyId "
 				+ "join college c on f.college_id = c.collegeId "
 				+ "where c.collegeId = ? "
-				+ "order by t.teacherLastname";
+				+ "order by t.teacherFirstName, t.teacherLastName";
 		
 		return jdbc.query(sql, new TeachersResultSetExtractor(TeacherTypes.COLLEGE_TEACHER,
 						  EducationInstitutionTypes.COLLEGE,
@@ -50,7 +50,7 @@ public class JdbcCollegeTeacherRepository implements TeacherRepository {
 				+ "join faculty f on t.teacherFaculty_id = f.facultyId "
 				+ "join college c on f.college_id = c.collegeId "
 				+ "where t.teacherFaculty_id = ? "
-				+ " order by t.teacherLastname";
+				+ " order by t.teacherFirstname, t.teacherLastName";
 		
 		return jdbc.query(sql, new TeachersResultSetExtractor(TeacherTypes.COLLEGE_TEACHER,
 				  EducationInstitutionTypes.COLLEGE,

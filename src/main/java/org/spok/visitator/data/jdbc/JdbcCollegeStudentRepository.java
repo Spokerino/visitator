@@ -73,7 +73,7 @@ public class JdbcCollegeStudentRepository implements StudentRepository {
 				+ " join faculty f on g.faculty_id = f.facultyId "
 				+ " join college c on f.college_id = c.collegeId "
 				+ "where c.collegeId = ? "
-				+ "order by st.lastName";
+				+ "order by st.firstName, st.lastName";
 		
 		return jdbc.query(sql, new StudentRowMapper(StudentTypes.COLLEGE_STUDENT), collegeId);
 	
@@ -86,7 +86,7 @@ public class JdbcCollegeStudentRepository implements StudentRepository {
 				+ " join faculty f on g.faculty_id = f.facultyId "
 				+ " join college c on f.college_id = c.collegeId "
 				+ "where f.facultyId = ? "
-				+ "order by st.lastName";
+				+ "order by st.firstName, st.lastName";
 		
 		return jdbc.query(sql, new StudentRowMapper(StudentTypes.COLLEGE_STUDENT), facultyId);
 	
@@ -99,7 +99,7 @@ public class JdbcCollegeStudentRepository implements StudentRepository {
 				+ "join faculty f on g.faculty_id = f.facultyId "
 				+ "join college c on f.college_id = c.collegeId "
 				+ "where g.groupId = ? "
-				+ "order by st.lastName";
+				+ "order by st.firstName, st.lastName";
 		
 		return jdbc.query(sql, new StudentRowMapper(StudentTypes.COLLEGE_STUDENT), groupId);
 	}
@@ -112,7 +112,7 @@ public class JdbcCollegeStudentRepository implements StudentRepository {
 				+ " join college c on f.college_id = c.collegeId "
 				+ "where c.collegeId = ? "
 				+ "and st.lastName like '" + name
-				+ "%' order by st.lastName";
+				+ "%' order by st.firstName, st.lastName";
 		
 		return jdbc.query(sql, new StudentRowMapper(StudentTypes.COLLEGE_STUDENT), collegeId);
 	

@@ -2,10 +2,7 @@ package org.spok.visitator.data.rsextractors;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
 import org.spok.visitator.entities.enum_types.EducationSpecializationTypes;
@@ -35,7 +32,7 @@ public class TeachersResultSetExtractor implements ResultSetExtractor<List<Teach
 	@Override
 	public List<Teacher> extractData(ResultSet rs) throws SQLException, DataAccessException {
 		
-		Map<Long, Teacher> teachers = new HashMap<Long, Teacher>();
+		Map<Long, Teacher> teachers = new LinkedHashMap<>();
 		
 			
 		while(rs.next()) {

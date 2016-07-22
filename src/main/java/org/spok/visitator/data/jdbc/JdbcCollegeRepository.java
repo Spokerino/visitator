@@ -28,7 +28,8 @@ public class JdbcCollegeRepository implements EducationInstitutionRepository {
 		String sql = "select * from college c "
 				+ "left join faculty f on c.collegeId = f.college_id "
 				+ "left join grp g on c.collegeId = g.college_id "
-				+ "left join teacher t on c.collegeId = t.teachercollege_id";
+				+ "left join teacher t on c.collegeId = t.teachercollege_id "
+				+ "order by collegeName, address, facultyName";
 		
 		return jdbc.query(sql, new EducationInstitutionsResultSetExtractor(
 				EducationInstitutionTypes.COLLEGE,
@@ -37,8 +38,9 @@ public class JdbcCollegeRepository implements EducationInstitutionRepository {
 	
 	@Override
 	public EducationInstitution findInstitutionById(Integer id) {
-		String sql = "select * from college c "
-				+ "where c.collegeId = ?";
+		String sql = "SELECT * FROM college c "
+				+ "WHERE c.collegeId = ? "
+				+ "ORDER BY collegeName";
 		return (EducationInstitution) jdbc.queryForObject(sql, new EducationInstitutionRowMapper(EducationInstitutionTypes.COLLEGE), id);
 	}
 	

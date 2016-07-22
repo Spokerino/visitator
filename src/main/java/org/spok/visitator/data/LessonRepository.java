@@ -11,21 +11,13 @@ import org.spok.visitator.entities.person.Student;
 
 public interface LessonRepository {
 
-	List<EducationGroup> showLessonsGroups();
-
 	Lesson findLessonById(Long lessonId);
 	
-	EducationGroup showLessonGroupById(Long lessonId);
-
 	List<EducationGroup> showLessonGroupsById(Long lessonId);
-
-	List<EducationSpecialization> showLessonsFaculties();
 
 	List<Mark> showLessonMarks(Long lessonId);
 
 	List<Student> findStudentsOnLesson(Long lessonId);
-
-	List<Student> findStudentsOnLessons();
 
 	List<Lesson> findLessonsForDate(CollegeFacultyGroup type, Number id,
 			String date);
@@ -49,7 +41,5 @@ public interface LessonRepository {
 	void addStudentToLesson(Long lessonId, Long studentId);
 
 	void removeStudentFromLesson(Long lessonId, Long studentId);
-
-	List<Lesson> findStudentLessons(Long studentId);
 
 }

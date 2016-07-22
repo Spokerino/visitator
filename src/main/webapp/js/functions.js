@@ -4,7 +4,6 @@ var ajax_subjects = "/visitator/ajax/subjects";
 $(document).ready(function() {
 
     $("#fclty").val(0);
-    //$("#col_groups").val("");
     $("#subjects").val("");
 
 
@@ -12,12 +11,10 @@ $(document).ready(function() {
         if($("#types").val() == 1)
         {
             $("#groups").attr('multiple','multiple');
-            //$("#col_groups").attr('multiple','multiple');
         }
         else
         {
             $("#groups").attr('multiple', false);
-            //$("#col_groups").attr('multiple', false);
         }
     });
 
@@ -94,7 +91,7 @@ function getGroups(data) {
         ajax : 'true'
     }, function(response) {
 
-        var select = $('#col_groups');
+        var select = $('#groups');
         select.find('option').remove();
 
         if($.isEmptyObject(response)) {

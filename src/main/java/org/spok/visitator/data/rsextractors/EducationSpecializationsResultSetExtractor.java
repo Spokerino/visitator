@@ -2,10 +2,7 @@ package org.spok.visitator.data.rsextractors;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.spok.visitator.entities.enum_types.EducationGroupTypes;
 import org.spok.visitator.entities.enum_types.EducationInstitutionTypes;
@@ -43,9 +40,9 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 	@Override
 	public List<EducationSpecialization> extractData(ResultSet rs) throws SQLException, DataAccessException {
 		
-		Map<Long, EducationSpecialization> specializations = new HashMap<Long, EducationSpecialization>();
-		
-		int noOneCaresAboutMe = 0;
+		Map<Long, EducationSpecialization> specializations = new LinkedHashMap<>();
+
+		int rowNumber = 0;
 
 		while(rs.next()) {
 			
@@ -55,7 +52,7 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 			{				
 				specialization = new EducationSpecializationRowMapper(institutionType,
 					specializationType)
-					.mapRow(rs, noOneCaresAboutMe);
+					.mapRow(rs, rowNumber);
 				specializations.put(specializationId, specialization);
 			}
 			
@@ -68,7 +65,7 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 				
 				Teacher teacher = new TeacherRowMapper(teacherType,
 														institutionType,
-														specializationType).mapRow(rs, noOneCaresAboutMe);
+														specializationType).mapRow(rs, rowNumber);
 				
 				boolean same = false;
 				for(Teacher t : teacherList) {
@@ -84,7 +81,7 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 					specialization.setSubjects(subjectList);
 				} 
 				
-				Subject subject = new SubjectRowMapper().mapRow(rs, noOneCaresAboutMe);
+				Subject subject = new SubjectRowMapper().mapRow(rs, rowNumber);
 				
 				same = false;
 				for(Subject s : subjectList) {
@@ -102,7 +99,7 @@ public class EducationSpecializationsResultSetExtractor implements ResultSetExtr
 				EducationGroup group = new EducationGroupRowMapper(
 						institutionType,
 						specializationType,
-						groupType).mapRow(rs, noOneCaresAboutMe);
+						groupType).mapRow(rs, rowNumber);
 				
 				same = false;
 				for(EducationGroup g : groupList) {
