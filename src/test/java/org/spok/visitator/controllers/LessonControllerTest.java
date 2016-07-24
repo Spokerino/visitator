@@ -35,7 +35,7 @@ import java.util.ArrayList;
 public class LessonControllerTest {
 
 	@InjectMocks
-	private LessonController controller;// = new LessonController();
+	private LessonController controller;
 
 	@Mock
 	private LessonService lessonService;
@@ -70,14 +70,14 @@ public class LessonControllerTest {
 				.andExpect(model().attributeExists("lessonList"));
 	}
 
-	@Ignore
+
 	@Test
 	public void testShowCollegeLessonByLessonId() throws Exception {
 
 		model.setViewName("college/collegeLesson");
 		model.addObject("lesson", testLesson);
 
-		when(controller.showLessonCollege(1, 12345L)).thenReturn(model);
+		when(lessonService.showLesson(12345L, CollegeFacultyGroup.COLLEGE)).thenReturn(model);
 
 		mockMvc.perform(get("/colleges/1/lessons/12345"))
 				.andExpect(view().name("college/collegeLesson"))
