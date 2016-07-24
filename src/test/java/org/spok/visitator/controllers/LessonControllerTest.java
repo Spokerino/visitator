@@ -1,28 +1,12 @@
 package org.spok.visitator.controllers;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.mockingDetails;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
-
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.spok.visitator.data.EducationGroupRepository;
-import org.spok.visitator.data.EducationSpecializationRepository;
-import org.spok.visitator.data.LessonRepository;
-import org.spok.visitator.data.StudentRepository;
-import org.spok.visitator.data.SubjectRepository;
-import org.spok.visitator.data.TeacherRepository;
 import org.spok.visitator.entities.enum_types.CollegeFacultyGroup;
-import org.spok.visitator.entities.lesson.Lecture;
 import org.spok.visitator.entities.lesson.Lesson;
 import org.spok.visitator.entities.lesson.Practicum;
 import org.spok.visitator.services.LessonService;
@@ -30,6 +14,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LessonControllerTest {
@@ -39,11 +29,8 @@ public class LessonControllerTest {
 
 	@Mock
 	private LessonService lessonService;
-
 	private MockMvc mockMvc;
-
 	private ModelAndView model;
-
 	private Lesson testLesson;
 
 	@Before
